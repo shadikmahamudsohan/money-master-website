@@ -1,7 +1,9 @@
+/* mony counting secton style */
 #money-count {
     background-color: #f0f0f0;
 }
 
+/* all input field style */
 .input-field {
     background-color: #d1d1d1;
     border: none;

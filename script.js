@@ -8,7 +8,15 @@ function totalExpensesCount() {
     const clothesEspensesValue = parseFloat(clothesEspenses.value);
 
     const totalEspensesValue = foodEspensesValue + rentEspensesValue + clothesEspensesValue;
-    return totalEspensesValue;
+    if (foodEspensesValue < 0 || rentEspensesValue < 0 || clothesEspensesValue < 0) {
+        const expensesErros = document.getElementsByClassName('expenses-error');
+        for (const error of expensesErros) {
+            error.classList.add('d-none')
+        }
+
+    } else {
+        return totalEspensesValue;
+    }
 }
 // total income function
 function totalIncome() {
@@ -78,12 +86,28 @@ document.getElementById('save-btn').addEventListener('click', function () {
     const previousBalance = document.getElementById('total-balance');
     const previousBalanceNumber = parseFloat(previousBalance.innerText);
     const totalRemaingBalance = previousBalanceNumber - totalSaveAmount;
-    // updatin the total saving amount and remaining balance
-    const totalSave = document.getElementById('total-save');
-    totalSave.innerText = totalSaveAmount;
-    const remainingBalance = document.getElementById('remainig-balance');
-    remainingBalance.innerText = totalRemaingBalance;
-    console.log('save amount', saveInputNumber, 'total save', totalSaveAmount, 'remaining balance', totalRemaingBalance);
+
+    // errors for fill in the above icome inputs and negative remainig balance
+    const giveIncomeError = document.getElementById('give-income-error')
+    const negativeRemainingBalanceError = document.getElementById('negative-remaining=balance-error')
+
+    if (isNaN(totalSaveAmount) || isNaN(totalRemaingBalance)) {
+        giveIncomeError.classList.remove('d-none')
+        negativeRemainingBalanceError.classList.add('d-none')
+    } else if (totalRemaingBalance < 0) {
+        negativeRemainingBalanceError.classList.remove('d-none')
+        giveIncomeError.classList.add('d-none')
+    } else {
+        // updatin the total saving amount and remaining balance
+        const totalSave = document.getElementById('total-save');
+        totalSave.innerText = totalSaveAmount;
+        const remainingBalance = document.getElementById('remainig-balance');
+        remainingBalance.innerText = totalRemaingBalance.toFixed(2);
+
+        // cleaning errors
+        giveIncomeError.classList.add('d-none')
+        negativeRemainingBalanceError.classList.add('d-none')
+    }
 })
 
 

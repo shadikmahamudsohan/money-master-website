@@ -86,17 +86,24 @@
                 </div>
 
                 <!-- save mouny part-->
-                <div class="d-flex justify-content-around px-0 px-md-5 flex-column flex-md-row">
+                <div class="d-flex justify-content-around px-0 px-md-5 flex-column flex-md-row mb-4">
                     <label for="save-input" class="col-form-label">Save:</label>
                     <input id="save-input" type="text" class="input-field">
                     <p>%</p>
                     <button id="save-btn" class="btn btn-primary px-4">Save</button>
                 </div>
 
+                <!-- error cases for save button -->
+                <p id="give-income-error" class="text-danger d-none text-center mb-4">Please give your income value.
+                </p>
+                <p id="negative-remaining=balance-error" class="text-danger d-none text-center">Your can't save
+                    that much muney.</p>
+
                 <!-- total saving and remaining balance -->
                 <div class="mt-4">
                     <h5 class="text-center fw-bold mb-4">Saving Amount: <span id="total-save">00</span></h5>
                     <h5 class="text-center fw-bold mb-4">Remaining Balance: <span id="remainig-balance">00</span></h5>
+
                 </div>
             </div>
         </section>

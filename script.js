@@ -10,13 +10,17 @@ function totalExpensesCount() {
     const totalEspensesValue = foodEspensesValue + rentEspensesValue + clothesEspensesValue;
     return totalEspensesValue;
 }
+// total income function
+function totalIncome() {
+    const totalIncomeInput = document.getElementById('income-input');
+    const totalIncomeValue = parseFloat(totalIncomeInput.value);
+    return totalIncomeValue;
+}
 
 // total expenses value counting calculate buttn click event
 document.getElementById('calculate-btn').addEventListener('click', function () {
+    const totalIncomeAmount = totalIncome();
     const totalEspensesAmount = totalExpensesCount();
-    const totalIncomeInput = document.getElementById('income-input');
-    const totalIncomeAmount = parseFloat(totalIncomeInput.value);
-
 
 
     // errors for not number and if the field is empthy
@@ -62,3 +66,24 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
         }
     }
 })
+
+// saving button click event
+document.getElementById('save-btn').addEventListener('click', function () {
+    const saveInput = document.getElementById('save-input');
+    const saveInputNumber = parseFloat(saveInput.value);
+    // counting the percentage of income
+    const totalIncomeAmountNumber = totalIncome();
+    const totalSaveAmount = (totalIncomeAmountNumber * saveInputNumber) / 100;
+    // counting the remaining balance
+    const previousBalance = document.getElementById('total-balance');
+    const previousBalanceNumber = parseFloat(previousBalance.innerText);
+    const totalRemaingBalance = previousBalanceNumber - totalSaveAmount;
+    // updatin the total saving amount and remaining balance
+    const totalSave = document.getElementById('total-save');
+    totalSave.innerText = totalSaveAmount;
+    const remainingBalance = document.getElementById('remainig-balance');
+    remainingBalance.innerText = totalRemaingBalance;
+    console.log('save amount', saveInputNumber, 'total save', totalSaveAmount, 'remaining balance', totalRemaingBalance);
+})
+
+

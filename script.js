@@ -89,14 +89,24 @@ document.getElementById('save-btn').addEventListener('click', function () {
 
     // errors for fill in the above icome inputs and negative remainig balance
     const giveIncomeError = document.getElementById('give-income-error')
-    const negativeRemainingBalanceError = document.getElementById('negative-remaining=balance-error')
+    const negativeRemainingBalanceError = document.getElementById('negative-remaining-balance-error')
+    const positiveSaveInputError = document.getElementById('give-proper-number-error')
 
-    if (isNaN(totalSaveAmount) || isNaN(totalRemaingBalance)) {
+    if (isNaN(totalIncomeAmountNumber)) {
         giveIncomeError.classList.remove('d-none')
         negativeRemainingBalanceError.classList.add('d-none')
-    } else if (totalRemaingBalance < 0) {
+        positiveSaveInputError.classList.add('d-none')
+    }
+    else if (isNaN(totalSaveAmount) || isNaN(totalRemaingBalance) || saveInputNumber < 0) {
+        giveIncomeError.classList.add('d-none')
+        negativeRemainingBalanceError.classList.add('d-none')
+        positiveSaveInputError.classList.remove('d-none')
+    }
+    else if (totalRemaingBalance < 0) {
         negativeRemainingBalanceError.classList.remove('d-none')
         giveIncomeError.classList.add('d-none')
+        positiveSaveInputError.classList.add('d-none')
+
     } else {
         // updatin the total saving amount and remaining balance
         const totalSave = document.getElementById('total-save');
@@ -107,6 +117,7 @@ document.getElementById('save-btn').addEventListener('click', function () {
         // cleaning errors
         giveIncomeError.classList.add('d-none')
         negativeRemainingBalanceError.classList.add('d-none')
+        positiveSaveInputError.classList.add('d-none')
     }
 })
 

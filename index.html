@@ -23,7 +23,7 @@
     <main class="row g-5 px-5 pb-5 m-0">
         <!-- image section -->
         <section class="col-12 col-lg-7">
-            <img class="img-fluid" src="image/countin-money.jpg" alt="savaing money img">
+            <img class="img-fluid" src="image/saving-money.jpg" alt="savaing money img">
         </section>
 
         <!-- money count section -->
@@ -36,8 +36,8 @@
                     <div>
                         <input id="income-input" type="text" class="input-field w-100 mb-4">
                         <!-- error case -->
-                        <p id="inocme-input-error-1" class="text-danger d-none">Please write a number</p>
-                        <p id="inocme-input-error-2" class="text-danger d-none">You can only use number</p>
+                        <p id="inocme-input-error-1" class="text-danger d-none">Please write a number.</p>
+                        <p id="inocme-input-error-2" class="text-danger d-none">You can only use positive number.</p>
                     </div>
                 </div>
 
@@ -47,27 +47,25 @@
                     <label for="food-input" class="col-form-label me-3">Food:</label>
                     <div>
                         <input id="food-input" type="text" class="input-field w-100 mb-4">
-                        <p class="expenses-error text-center text-danger d-none">Please write a positive number <br> in
-                            all the
-                            expenses input.</p>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center flex-column flex-md-row">
                     <label for="rent-input" class="col-form-label me-3">Rent:</label>
                     <div>
                         <input id="rent-input" type="text" class="input-field w-100 mb-4">
-                        <p class="expenses-error text-center text-danger d-none">Please write a positive number <br> in
-                            all the
-                            expenses input.</p>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center flex-column flex-md-row">
                     <label for="clothes-input" class="col-form-label me-3">Clothes:</label>
                     <div>
                         <input id="clothes-input" type="text" class="input-field w-100 mb-4">
-                        <p class="expenses-error text-center text-danger d-none">Please write a positive number <br> in
+                        <p id="expenses-error-string" class="expenses-error text-center text-danger d-none">Please write
+                            a
+                            number <br> in
                             all the
                             expenses input.</p>
+                        <p id="expenses-error-negative" class="expenses-error text-center text-danger d-none">You can't
+                            use negative number.</p>
                     </div>
                 </div>
 
@@ -96,11 +94,11 @@
                 <!-- error cases for save button -->
                 <p id="give-income-error" class="text-danger d-none text-center mb-4">Please give your income value.
                 </p>
-                <p id="give-proper-number-error" class="text-danger d-none text-center mb-4">Please give positive
+                <p id="give-proper-number-error" class="text-danger d-none text-center mb-4">Please give a positive
                     number.
                 </p>
                 <p id="negative-remaining-balance-error" class="text-danger d-none text-center">Your can't save
-                    that much muney.</p>
+                    that much money.</p>
 
                 <!-- total saving and remaining balance -->
                 <div class="mt-4">

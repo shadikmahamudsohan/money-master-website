@@ -33,8 +33,11 @@
                 <!-- income input -->
                 <div class="d-flex justify-content-center flex-column flex-md-row">
                     <label for="income-input" class="col-form-label me-3">Income:</label>
-                    <div class="">
+                    <div>
                         <input id="income-input" type="text" class="input-field w-100 mb-4">
+                        <!-- error case -->
+                        <p id="inocme-input-error-1" class="text-danger d-none">Please write a number</p>
+                        <p id="inocme-input-error-2" class="text-danger d-none">You can only use number</p>
                     </div>
                 </div>
 
@@ -42,20 +45,23 @@
                 <h5 class="text-center fw-bold mb-4">Expenses</h5>
                 <div class="d-flex justify-content-center flex-column flex-md-row">
                     <label for="food-input" class="col-form-label me-3">Food:</label>
-                    <div class="">
+                    <div>
                         <input id="food-input" type="text" class="input-field w-100 mb-4">
+                        <p class="expenses-error text-danger d-none">Please write a positive number</p>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center flex-column flex-md-row">
                     <label for="rent-input" class="col-form-label me-3">Rent:</label>
-                    <div class="">
+                    <div>
                         <input id="rent-input" type="text" class="input-field w-100 mb-4">
+                        <p class="expenses-error text-danger d-none">Please write a positive number</p>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center flex-column flex-md-row">
                     <label for="clothes-input" class="col-form-label me-3">Clothes:</label>
-                    <div class="">
+                    <div>
                         <input id="clothes-input" type="text" class="input-field w-100 mb-4">
+                        <p class="expenses-error text-danger d-none">Please write a positive number</p>
                     </div>
                 </div>
 

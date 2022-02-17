@@ -47,21 +47,27 @@
                     <label for="food-input" class="col-form-label me-3">Food:</label>
                     <div>
                         <input id="food-input" type="text" class="input-field w-100 mb-4">
-                        <p class="expenses-error text-danger d-none">Please write a positive number</p>
+                        <p class="expenses-error text-center text-danger d-none">Please write a positive number <br> in
+                            all the
+                            expenses input.</p>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center flex-column flex-md-row">
                     <label for="rent-input" class="col-form-label me-3">Rent:</label>
                     <div>
                         <input id="rent-input" type="text" class="input-field w-100 mb-4">
-                        <p class="expenses-error text-danger d-none">Please write a positive number</p>
+                        <p class="expenses-error text-center text-danger d-none">Please write a positive number <br> in
+                            all the
+                            expenses input.</p>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center flex-column flex-md-row">
                     <label for="clothes-input" class="col-form-label me-3">Clothes:</label>
                     <div>
                         <input id="clothes-input" type="text" class="input-field w-100 mb-4">
-                        <p class="expenses-error text-danger d-none">Please write a positive number</p>
+                        <p class="expenses-error text-center text-danger d-none">Please write a positive number <br> in
+                            all the
+                            expenses input.</p>
                     </div>
                 </div>
 
@@ -69,6 +75,9 @@
                 <div class="d-flex justify-content-center my-4">
                     <button id="calculate-btn" class="btn btn-primary px-5 py-2">Calculate</button>
                 </div>
+                <!-- negative balance error -->
+                <p id="negative-balance-error" class="text-danger d-none text-center mb-4">You can't have more expenses
+                    then your income.</p>
 
                 <!-- total expenses and balance -->
                 <div>

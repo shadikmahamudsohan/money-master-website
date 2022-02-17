@@ -23,6 +23,7 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     const incomeErrorString = document.getElementById('inocme-input-error-1');
     const incomeErrorNegative = document.getElementById('inocme-input-error-2');
     const expensesErros = document.getElementsByClassName('expenses-error');
+    const negativeBalance = document.getElementById('negative-balance-error');
 
     if (isNaN(totalIncomeAmount)) {
         incomeErrorString.classList.remove('d-none');
@@ -36,16 +37,26 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
         for (const error of expensesErros) {
             error.classList.remove('d-none')
         }
-    } else {
+    } else if (totalEspensesAmount > totalIncomeAmount) {
+        negativeBalance.classList.remove('d-none')
+        // removeing the errors
+        incomeErrorString.classList.add('d-none')
+        incomeErrorNegative.classList.add('d-none')
+        for (const error of expensesErros) {
+            error.classList.add('d-none')
+        }
+    }
+    else {
         // updating total espenses and balance vlue
         const totalEspenses = document.getElementById('total-expenses');
         const totalBalance = document.getElementById('total-balance');
         totalEspenses.innerText = totalEspensesAmount;
         totalBalance.innerText = totalIncomeAmount - totalEspensesAmount;
 
-        // removing errors
+        // removing the errors
         incomeErrorString.classList.add('d-none')
         incomeErrorNegative.classList.add('d-none')
+        negativeBalance.classList.add('d-none')
         for (const error of expensesErros) {
             error.classList.add('d-none')
         }
